@@ -1,0 +1,147 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|c:\\users\\jim_c\\documents\\upn\\2026-02\\estructuras de datos - 226534.5506 (virtual)\\ef\\ef-interbank\\transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|solutionrelative:transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|c:\\users\\jim_c\\documents\\upn\\2026-02\\estructuras de datos - 226534.5506 (virtual)\\ef\\ef-interbank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|c:\\users\\jim_c\\documents\\upn\\2026-02\\estructuras de datos - 226534.5506 (virtual)\\ef\\ef-interbank\\listacircularservidores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|solutionrelative:listacircularservidores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|c:\\users\\jim_c\\documents\\upn\\2026-02\\estructuras de datos - 226534.5506 (virtual)\\ef\\ef-interbank\\listadoblemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|solutionrelative:listadoblemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|c:\\users\\jim_c\\documents\\upn\\2026-02\\estructuras de datos - 226534.5506 (virtual)\\ef\\ef-interbank\\pilareintentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|solutionrelative:pilareintentos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|c:\\users\\jim_c\\documents\\upn\\2026-02\\estructuras de datos - 226534.5506 (virtual)\\ef\\ef-interbank\\colatransferencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|solutionrelative:colatransferencias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|c:\\users\\jim_c\\documents\\upn\\2026-02\\estructuras de datos - 226534.5506 (virtual)\\ef\\ef-interbank\\listaauditoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB64ABD-1B1F-49A1-8513-46F3CFA39454}|EF-Interbank.csproj|solutionrelative:listaauditoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListaCircularServidores.cs",
+              "DocumentMoniker": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ListaCircularServidores.cs",
+              "RelativeDocumentMoniker": "ListaCircularServidores.cs",
+              "ToolTip": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ListaCircularServidores.cs",
+              "RelativeToolTip": "ListaCircularServidores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T02:07:55.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListaDobleMenu.cs",
+              "DocumentMoniker": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ListaDobleMenu.cs",
+              "RelativeDocumentMoniker": "ListaDobleMenu.cs",
+              "ToolTip": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ListaDobleMenu.cs",
+              "RelativeToolTip": "ListaDobleMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T02:07:44.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ColaTransferencias.cs",
+              "DocumentMoniker": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ColaTransferencias.cs",
+              "RelativeDocumentMoniker": "ColaTransferencias.cs",
+              "ToolTip": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ColaTransferencias.cs",
+              "RelativeToolTip": "ColaTransferencias.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T01:17:18.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ListaAuditoria.cs",
+              "DocumentMoniker": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ListaAuditoria.cs",
+              "RelativeDocumentMoniker": "ListaAuditoria.cs",
+              "ToolTip": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\ListaAuditoria.cs",
+              "RelativeToolTip": "ListaAuditoria.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T01:11:29.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Transaccion.cs",
+              "DocumentMoniker": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\Transaccion.cs",
+              "RelativeDocumentMoniker": "Transaccion.cs",
+              "ToolTip": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\Transaccion.cs",
+              "RelativeToolTip": "Transaccion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T00:59:19.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAcwEkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T01:09:56.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PilaReintentos.cs",
+              "DocumentMoniker": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\PilaReintentos.cs",
+              "RelativeDocumentMoniker": "PilaReintentos.cs",
+              "ToolTip": "C:\\Users\\jim_c\\Documents\\UPN\\2026-02\\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\\EF\\EF-Interbank\\PilaReintentos.cs",
+              "RelativeToolTip": "PilaReintentos.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAYwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T01:09:21.578Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
