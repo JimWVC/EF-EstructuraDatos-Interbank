@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace EF_Interbank
 {
@@ -6,73 +7,160 @@ namespace EF_Interbank
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("==================================================");
-            Console.WriteLine("   SISTEMA INTERBANK - PROCESAMIENTO Y FALLOS     ");
-            Console.WriteLine("==================================================\n");
+            bool continuar = true;
 
-            // 1. Instanciar estructuras
-            ListaAuditoria historialAuditoria = new ListaAuditoria();
-            ColaTransferencias colaTransferencias = new ColaTransferencias();
-            PilaReintentos pilaReintentos = new PilaReintentos();
-
-            // 2. Simular N usuarios (ej. 5 clientes) llenando formularios en el buzón
-            int totalClientes = 5;
-            Console.WriteLine($"[+] Recibiendo formularios de {totalClientes} clientes en el buzón...");
-
-            for (int i = 1; i <= totalClientes; i++)
+            do
             {
-                Transaccion tx = new Transaccion($"TX-2026-0{i}", $"Cliente-0{i}", "Destino-Interbank", i * 200.00m);
+                while (Console.KeyAvailable)
+                    Console.ReadKey(true);
 
-                // Todo queda registrado en el historial general (Auditoría)
-                historialAuditoria.Registrar(tx);
+                Console.Clear();
+                Console.WriteLine("==================================================================================================");
+                Console.WriteLine("        INTERBANK - PROCESAMIENTO MASIVO CON ARQUITECTURA DINÁMICA ANTI-COLAPSO          ");
+                Console.WriteLine("==================================================================================================\n");
 
-                // Se van acumulando en la cola FIFO del buzón
-                colaTransferencias.Enqueue(tx);
-            }
-            Console.WriteLine($"[+] Total de operaciones acumuladas en cola: {colaTransferencias.tamanio}\n");
+                Console.WriteLine("Seleccione el escenario de prueba según el caso de alta demanda:");
+                Console.WriteLine(" [1] Prueba rápida (3 solicitudes, límite estático de 2)");
+                Console.WriteLine(" [2] Prueba mediana (110 solicitudes, límite estático de 100)");
+                Console.WriteLine(" [3] Prueba masiva real (5020 solicitudes, superando el tope crítico de 5000)");
+                Console.WriteLine(" [4] Salir del sistema");
+                Console.Write("\nIngrese una opción (1-4): ");
 
-            // 3. Procesamiento parcial del buzón (Simulando que el sistema se satura o se corta el día)
-            // que de las 5, el sistema solo procesa las primeras 3, dejando las demás en la cola.
-            Console.WriteLine("--- PROCESANDO LOTE DE TRANSACCIONES ---");
-            int procesadasExito = 0;
-            int limiteProcesamiento = 3;
+                string opcion = Console.ReadLine()?.Trim();
+                int limiteEstatico = 10;
+                int nUsuarios = 12;
+                int tamanoPagina = 10;
 
-            while (!colaTransferencias.EstaVacia() && procesadasExito < limiteProcesamiento)
-            {
-                Transaccion actual = colaTransferencias.Dequeue();
+                if (opcion == "1") { limiteEstatico = 2; nUsuarios = 3; tamanoPagina = 2; }
+                else if (opcion == "2") { limiteEstatico = 100; nUsuarios = 110; tamanoPagina = 20; }
+                else if (opcion == "3") { limiteEstatico = 5000; nUsuarios = 5020; tamanoPagina = 25; }
+                else if (opcion == "4" || string.IsNullOrEmpty(opcion)) break;
+                else continue;
 
-                // una de las procesadas falla por error de conexión o saldo
-                if (actual.idTransaccion == "TX-2026-02")
+                Console.Clear();
+                Console.WriteLine("Ejecutando motor masivo y estructurando páginas de resultados...");
+
+                Stopwatch stopwatch = Stopwatch.StartNew();
+                Transaccion[] listaTransacciones = Transaccion.ObtenerLoteTransacciones(nUsuarios);
+
+                // Instanciación de las 5 estructuras dinámicas
+                ListaAuditoria historialAuditoria = new ListaAuditoria();
+                ColaTransferencias colaTransferencias = new ColaTransferencias();
+                PilaReintentos pilaReintentos = new PilaReintentos();
+                ListaDobleMenu paginadorTransacciones = new ListaDobleMenu();
+                ListaCircularTransaccion lineaTiempoCircular = new ListaCircularTransaccion();
+
+                int contadorAceptadas = 0;
+                int contadorExcedentes = 0;
+
+                foreach (Transaccion tx in listaTransacciones)
                 {
-                    actual.estado = "Fallida";
-                    pilaReintentos.Push(actual); // Se va a la pila de reintentos (LIFO)
-                    Console.WriteLine($"[X] Error en {actual.idTransaccion}. Movida a Pila de Reintentos.");
+                    historialAuditoria.Registrar(tx);
+
+                    if (contadorAceptadas < limiteEstatico)
+                    {
+                        tx.estado = "Procesada";
+                        colaTransferencias.Enqueue(tx);
+                        contadorAceptadas++;
+                    }
+                    else
+                    {
+                        tx.estado = "Rechazada por Límite";
+                        tx.motivoFalla = "Supera tope de 5000 (Pila LIFO de Resguardo)";
+                        pilaReintentos.Push(tx);
+                        contadorExcedentes++;
+                    }
                 }
-                else
+                stopwatch.Stop();
+
+                string bufferPagina = "";
+                int contadorEnPagina = 0;
+
+                while (!colaTransferencias.EstaVacia())
                 {
-                    Console.WriteLine($"[Procesada] ID: {actual.idTransaccion} | Monto: S/. {actual.monto} | Estado: {actual.estado}");
+                    Transaccion actual = colaTransferencias.Dequeue();
+
+                    lineaTiempoCircular.InsertarAlFinal(actual.idTransaccion, actual.fechaHora);
+
+                    bufferPagina += string.Format("{0,-14} | {1,-22} | S/. {2,-10:F2} | {3,-22} | {4,-8}\n",
+                        actual.idTransaccion, actual.nombreTitularDestino, actual.monto, actual.estado, actual.fechaHora.Substring(11, 8));
+
+                    contadorEnPagina++;
+
+                    if (contadorEnPagina == tamanoPagina)
+                    {
+                        paginadorTransacciones.AgregarPagina(bufferPagina);
+                        bufferPagina = "";
+                        contadorEnPagina = 0;
+                    }
                 }
-                procesadasExito++;
-            }
+                if (contadorEnPagina > 0)
+                {
+                    paginadorTransacciones.AgregarPagina(bufferPagina);
+                }
 
-            // 4. Mostrar lo que **se quedó en la cola sin procesarse**
-            Console.WriteLine($"\n[!] Corte de proceso. Transacciones que **se quedan en la cola** sin ejecutarse: {colaTransferencias.tamanio}");
-            NodoCola nodoPendiente = colaTransferencias.frente;
-            while (nodoPendiente != null)
-            {
-                Console.WriteLine($"    -> Pendiente en Cola | ID: {nodoPendiente.dato.idTransaccion} | Monto: S/. {nodoPendiente.dato.monto}");
-                nodoPendiente = nodoPendiente.siguiente;
-            }
+                // Paginación (Lista Doble)
+                string tecla = "";
+                while (tecla != "S" && paginadorTransacciones.Cantidad > 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine("==================================================================================================");
+                    Console.WriteLine($"      REPORTE PAGINADO DE TRANSFERENCIAS VÁLIDAS (Total Aceptadas: {contadorAceptadas})         ");
+                    Console.WriteLine("==================================================================================================\n");
 
-            // 5. Gestionar los reintentos que cayeron en la pila
-            Console.WriteLine("\n--- EJECUTANDO REINTENTOS DE ÚLTIMO MOMENTO (PILA LIFO) ---");
-            while (!pilaReintentos.EstaVacia())
-            {
-                Transaccion txReintento = pilaReintentos.Pop();
-                txReintento.estado = "Procesada en Reintento";
-                Console.WriteLine($"[v] Reintentando transacción fallida: {txReintento.idTransaccion} | Nuevo Estado: {txReintento.estado}");
-            }
-            Console.ReadKey();
+                    NodoPagina paginaActual = paginadorTransacciones.Actual;
+                    Console.WriteLine($"[ PÁGINA {paginaActual.numeroPagina} de {paginadorTransacciones.Cantidad} ]\n");
+                    Console.WriteLine(string.Format("{0,-14} | {1,-22} | {2,-14} | {3,-22} | {4,-8}", "ID TX", "TITULAR DESTINO", "MONTO", "ESTADO", "HORA"));
+                    Console.WriteLine("--------------------------------------------------------------------------------------------------");
+                    Console.WriteLine(paginaActual.contenidoTabla);
+                    Console.WriteLine("--------------------------------------------------------------------------------------------------");
+                    Console.WriteLine(" Controles de Paginación Bidireccional (Lista Doble):");
+                    Console.WriteLine("   [ D ] -> Página Siguiente (siguiente nodo)");
+                    Console.WriteLine("   [ A ] <- Página Anterior (nodo anterior)");
+                    Console.WriteLine("   [ S ] Salir de la paginación y ver Pila de Excedentes y Línea de Tiempo");
+                    Console.WriteLine("==================================================================================================");
+                    Console.Write(" Ingrese comando (A / D / S): ");
+
+                    var input = Console.ReadKey(false);
+                    tecla = input.Key.ToString().ToUpper();
+
+                    if (tecla == "D") paginadorTransacciones.IrSiguiente();
+                    else if (tecla == "A") paginadorTransacciones.IrAnterior();
+                }
+
+                // Pila de Excedentes y Lista Circular
+                Console.Clear();
+                Console.WriteLine("==================================================================================================");
+                Console.WriteLine($"--- PILA DE RESGUARDO Y EXCEDENTES LIFO ({contadorExcedentes} rechazados por límite) ---");
+                Console.WriteLine("==================================================================================================\n");
+                Console.WriteLine(string.Format("{0,-14} | {1,-24} | {2,-20} | {3,-30}", "ID TX", "TITULAR DESTINO", "ESTADO", "MOTIVO DE FALLA"));
+                Console.WriteLine("--------------------------------------------------------------------------------------------------");
+
+                while (!pilaReintentos.EstaVacia())
+                {
+                    Transaccion reintento = pilaReintentos.Pop();
+                    Console.WriteLine(string.Format("{0,-14} | {1,-24} | {2,-20} | {3,-30}",
+                        reintento.idTransaccion, reintento.nombreTitularDestino, reintento.estado, reintento.motivoFalla));
+                }
+                Console.WriteLine("--------------------------------------------------------------------------------------------------\n");
+
+                // Línea de Tiempo (Lista Circular)
+                Console.WriteLine("--- LÍNEA DE TIEMPO CRONOLÓGICA (Lista Circular - Recorrido con do-while) ---");
+                Console.WriteLine(lineaTiempoCircular.MostrarLoteCircular());
+                Console.WriteLine("--------------------------------------------------------------------------------------------------\n");
+
+                Console.WriteLine("==================================================================================================");
+                Console.WriteLine($" [ÉXITO] Lote de {nUsuarios} procesado correctamente en {stopwatch.ElapsedMilliseconds} ms.");
+                Console.WriteLine("==================================================================================================");
+
+                Console.WriteLine("\n¿Desea realizar otra simulación? (S/N): ");
+                string respuesta = Console.ReadLine()?.Trim();
+                if (respuesta == null || respuesta.ToUpper() != "S")
+                {
+                    continuar = false;
+                }
+
+            } while (continuar);
         }
     }
 }
