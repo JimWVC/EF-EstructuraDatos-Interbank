@@ -6,40 +6,42 @@ using System.Threading.Tasks;
 
 namespace EF_Interbank
 {
-    // Nodo doble para recorrer las transacciones hacia adelante y hacia atrás
-    public class NodoDoble
+    public class NodoPagina
     {
-        public Transaccion dato;
-        public NodoDoble siguiente;
-        public NodoDoble anterior;
+        public int numeroPagina;
+        public string contenidoTabla;
+        public NodoPagina siguiente, anterior;
 
-        public NodoDoble(Transaccion t)
+        public NodoPagina(int num, string contenido)
         {
-            this.dato = t;
-            this.siguiente = null;
-            this.anterior = null;
+            numeroPagina = num;
+            contenidoTabla = contenido;
+            siguiente = anterior = null;
         }
     }
 
-    // Lista Doble: Permite navegar el historial de transacciones en ambas direcciones
     public class ListaDobleMenu
     {
-        public NodoDoble cabeza;
-        public NodoDoble cola;
+        private NodoPagina cabeza, cola, actual;
+        private int cantidad;
+
+        public int Cantidad => cantidad;
+        public NodoPagina Actual => actual;
 
         public ListaDobleMenu()
         {
-            this.cabeza = null;
-            this.cola = null;
+            cabeza = cola = actual = null;
+            cantidad = 0;
         }
 
-        // Inserta una transacción al final de la lista doble
-        public void Insertar(Transaccion t)
+        // Inserta una página de transacciones al final manteniendo el puntero cola en O(1)
+        public void AgregarPagina(string contenido)
         {
-            NodoDoble nuevo = new NodoDoble(t);
+            cantidad++;
+            NodoPagina nuevo = new NodoPagina(cantidad, contenido);
             if (cabeza == null)
             {
-                cabeza = cola = nuevo;
+                cabeza = cola = actual = nuevo;
             }
             else
             {
@@ -47,6 +49,20 @@ namespace EF_Interbank
                 nuevo.anterior = cola;
                 cola = nuevo;
             }
+        }
+
+        // Navegación bidireccional hacia adelante (Página Siguiente)
+        public void IrSiguiente()
+        {
+            if (actual != null && actual.siguiente != null)
+                actual = actual.siguiente;
+        }
+
+        // Navegación bidireccional hacia atrás (Página Anterior)
+        public void IrAnterior()
+        {
+            if (actual != null && actual.anterior != null)
+                actual = actual.anterior;
         }
     }
 }
