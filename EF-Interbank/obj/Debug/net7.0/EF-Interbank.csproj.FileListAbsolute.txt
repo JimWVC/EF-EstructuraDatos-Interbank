@@ -1,0 +1,15 @@
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\bin\Debug\net7.0\EF-Interbank.exe
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\bin\Debug\net7.0\EF-Interbank.deps.json
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\bin\Debug\net7.0\EF-Interbank.runtimeconfig.json
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\bin\Debug\net7.0\EF-Interbank.dll
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\bin\Debug\net7.0\EF-Interbank.pdb
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.AssemblyInfoInputs.cache
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.AssemblyInfo.cs
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.csproj.CoreCompileInputs.cache
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.sourcelink.json
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.dll
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\refint\EF-Interbank.dll
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.pdb
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\EF-Interbank.genruntimeconfig.cache
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Interbank\obj\Debug\net7.0\ref\EF-Interbank.dll

@@ -1,0 +1,13 @@
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\bin\Debug\EF-Diseño.exe.config
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\bin\Debug\EF-Diseño.exe
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\bin\Debug\EF-Diseño.pdb
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF-Diseño.csproj.AssemblyReference.cache
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF_Diseño.Properties.Resources.resources
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF-Diseño.csproj.GenerateResource.cache
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF-Diseño.csproj.CoreCompileInputs.cache
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF-Diseño.exe
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF-Diseño.pdb
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF_Diseño.FrmDashboard.resources
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF_Diseño.FrmLineaTiempo.resources
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF_Diseño.FrmExcedentes.resources
+C:\Users\jim_c\Documents\UPN\2026-02\ESTRUCTURAS DE DATOS - 226534.5506 (Virtual)\EF\EF-Diseño\obj\Debug\EF-Diseño.exe.config
